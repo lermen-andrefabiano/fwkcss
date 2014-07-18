@@ -1,0 +1,207 @@
+/** Temas para casos ESPECÍFICOS, onde se quer apenas determinada cor de fundo
+ *	PARA UM ELEMENTO QUE NÃO FAZ PARTE DOS COMPONENTES NEM DA ESTRUTURA específica do tema
+ *
+ *	O propósito desse bloco é evitar ter que personalizar alguns elementos com blocos
+ *	de css onde estará contida apenas a adição de um fundo. Além disso, serve para centralizar
+ *	as cores de fundo da aplicação (evitando ter que sair procurando em arquivos especificos)
+ *
+ *	ou seja, EVITE usar essa classe para elementos que já estão recebendo estilo dos componentes ou
+ *	da estrutura. Reforçando, essas classes devem ser usadas apenas em elementos não previstos dentro
+ *	dos componentes e da estrutura.
+ *
+ *	@author mauricio.araldi
+ *	@since 22/08/2013
+ */
+ 
+.bg-pri {
+	background-color: #f0f0f0;
+	color: #000;
+}
+.bg-sec {
+	background-color: #e0e0de;
+	color: #4d7494;
+}
+.bg-ter {
+	background-color: #4d7494;
+	color: #fff;
+}
+ 
+ 
+
+/***
+ *	Estrutura padrão de layout da aplicação
+ *  TODO : comentários e revisão de cores.
+ */
+ .cbl, .rdp, .cnt {
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.cbl, .rdp, .cnt, .mn {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/*** Cabecalhos ***/
+.cbl {}
+
+.cbl.cbl-pri {
+	background-color: #f0f0f0;
+	border-bottom: 1px solid black;
+	bottom: 0;
+	color: #4D7496;
+	height: 2em;
+	top: 0;
+}
+
+.cbl.cbl-sec {
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #D8D8D8;
+	max-height: 3em;
+}
+
+/*** Conteudos ***/
+.cnt.cnt-pri {
+	bottom: 0;
+	top: 2em; /* precisa ser igual a altura do cbl-pri */
+}
+
+/* Conteudo primario acompanhado de rodape global */
+.cnt.cnt-pri.c-rdp {
+	bottom: 3em; /* altura .rdp */
+}
+
+.cnt.cnt-sec {
+	bottom: 0;
+	top: 3em; /* Altura aproximada do .cbl-sec */
+}
+
+/* 
+ * Por padrão vem com espaçamento de 20% de cada lado
+ * para cada um dos menus laterais
+ */
+.cnt.cnt-ter {
+	bottom: 0;
+	left: 20%;
+	overflow-y: auto;
+	/* última parâmetro é a altura aproximada do .rdp */
+	padding: .75em .75em 5em;
+	right: 20%;
+	top: 0;
+	width: 60%;
+}
+
+.cnt.cnt-ter.int {
+	right: 0;
+	width: 80%;
+}
+
+.cnt.cnt-ter.tot {
+	left: 0;
+	width: 100%;
+}
+
+/* Conteúdo Terciário Sem Rodapé */
+.cnt.cnt-ter.s-rdp {
+	padding-bottom: 0;
+}
+
+/*** Rodape ***/
+.rdp {
+	bottom: 0;
+	padding: .25em;
+}
+
+.rdp.rdp-pri, .rdp.rdp-sec {
+	background-color: #f9f9f9;
+	border-top: 2px solid #C7C7C7;
+/*  box-shadow: 0 0 5px #B8BFC6; */
+}
+
+.rdp.rdp-sec {
+	/* alinha com a largura do primeiro .mn */
+	left: 20%;
+	right: 0;
+}
+
+/*** Menu Lateral ***/
+.cnt-sec .mn {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 20%;
+	border-right: 2px #C7C7C7 solid;
+}
+
+.cnt-sec .mn:last-child,
+.cnt-sec .mn.historico {
+	border-left: 2px #C7C7C7 solid;
+	left: initial;
+	right: 0;
+}
+
+/** Vertical Overflow Enabled Smoothly */
+.voe, .mn {
+	-webkit-overflow-scrolling: touch;
+	overflow-y: auto;
+}
+
+
+/*** TODO Cabeçalho principal - Outros Elementos ***/
+.cbl-pri .versao-produto {
+	color: #4D7496;
+	font-size: 12px;
+	padding: .65em 0;
+	padding-right: .5em;
+}
+
+.cbl-pri .btn-logout {
+	border-left: 1px solid #4D7496;
+	margin-left: .5em;
+	padding: .25em 1.5em;
+}
+
+.cbl-pri  .btn-logout:active {
+	background-color: #888;
+	opacity: 0.7;
+}
+
+.cbl-pri .btn-logout,
+.cbl-pri .versao-produto {
+	float: right;
+}
+
+.cbl-pri .logo-pepmovel {
+	height: 100%;
+	max-height: 30px;
+	max-width: 171px;
+	width: 100%;
+}
+
+.logo-mvpep-reduzido {
+	display: none;
+}
+
+/** Media Queries **/
+@media only screen and (max-width: 800px) {
+	.mn {
+		display: none;
+	}
+
+	.cnt-sec .cnt.cnt-ter,
+	.cnt-sec .cnt.cnt-ter.int {
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+
+	.rdp.rdp-sec {
+		left: 0;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+}

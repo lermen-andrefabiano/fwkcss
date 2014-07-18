@@ -1,0 +1,48 @@
+﻿/**
+ *	@author Mauricio Araldi
+ *	@since 10/04/2013
+ *
+ *	Esse fix é utilizado para fazer com que os elementos
+ *	clicáveis, no Mobile Safari, não recebam a sombra
+ *	padrão deste navegador quando clicados.
+ *
+ *	Guia de informações úteis 1.1
+ */
+body {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/**
+ *	@author Mauricio Araldi
+ *	@since 16/08/2013
+ *
+ *	Fix para os checkboxes gerados pelo JSF através do elemento
+ *	<h:selectManyCheckbox>, que cria uma table.
+ */
+.fix-lista-checkbox {
+	width: 100%;
+}
+
+.fix-lista-checkbox tr {
+	background-color: #f0f0f0;
+	color: #4d7494;
+	padding: .1em;
+}
+.fix-lista-checkbox tr.ativo {
+	background-color: #d5e4f0;
+}
+.fix-lista-checkbox tr,
+.fix-lista-checkbox td {
+	display: block;
+}
+.fix-lista-checkbox label {
+	width: 85%;
+}
+.fix-lista-checkbox input {
+	width: 10%;
+}
+.fix-lista-checkbox label, .fix-lista-checkbox input {
+	display: inline-block;
+	vertical-align: middle;
+}

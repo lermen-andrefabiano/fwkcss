@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="componentes.css" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		
+		<script>
+			window.onload = function() {
+				var lis = document.querySelectorAll('.ls li:not(.divider)');
+				
+				for (var i=0; i < lis.length ; i++) {
+					lis[i].addEventListener('click', function() {
+						this.className.indexOf('ativo') > -1 ? this.className = this.className.replace(/\bativo\b/,'') : this.className += ' ativo';
+					});
+				}
+			
+			
+			
+				var checkboxes = document.querySelectorAll('input[type=checkbox]');
+				
+				for (var i=0; i < checkboxes.length ; i++) {
+					checkboxes[i].addEventListener('click', function() {
+						var label = this.parentNode;
+						this.checked ? label.className += ' ativo' : label.className = label.className.replace(/\bativo\b/,'');
+					});
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div style="width: 31%; display: inline-block;">
+			<ul class="ls ls-pri">
+				<li class="divider">Normal</li>
+				<li>Lorem ipsum dolor</li>
+				<li>consectetur adipiscing elit</li>
+				<li>Vestibulum iaculis felis sed lectus dapibus</li>
+			</ul>
+			
+			<ul class="ls ls-pri ls-ico">	
+				<li class="divider">Left Icon</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">a lacinia</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">nibh molestie</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-pri ls-ico">	
+				<li class="divider">Right Icon</li>
+				<li>
+					<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">sit amet vehicula</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-pri ls-ico">	
+				<li class="divider">Multi Lined</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					</span>
+				</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<nav class="ls ls-pri">
+				<a href="#" class="li divider">Anchors list</a>
+				<a href="#" class="li">a lacinia</a>
+				<a href="#" class="li">sit amet vehicula</a>
+				<a href="#" class="li">Praesent felis ligula, dictum id elementum eget</a>
+			</nav>
+			
+			<nav class="ls ls-pri ls-ico">
+				<a href="#" class="li divider">Anchors list with Icons and multi line</a>
+				<a href="#" class="li">
+					<span class="ln">a lacinia</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">sit amet vehicula</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+			</nav>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<ul class="ls ls-sec">
+				<li class="divider">Normal</li>
+				<li>Lorem ipsum dolor</li>
+				<li>consectetur adipiscing elit</li>
+				<li>Vestibulum iaculis felis sed lectus dapibus</li>
+			</ul>
+			
+			<ul class="ls ls-sec ls-ico">	
+				<li class="divider">Left Icon</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">a lacinia</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">nibh molestie</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-sec ls-ico">	
+				<li class="divider">Right Icon</li>
+				<li>
+					<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">sit amet vehicula</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-sec ls-ico">	
+				<li class="divider">Multi Lined</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					</span>
+				</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<nav class="ls ls-sec">
+				<a href="#" class="li divider">Anchors list</a>
+				<a href="#" class="li">a lacinia</a>
+				<a href="#" class="li">sit amet vehicula</a>
+				<a href="#" class="li">Praesent felis ligula, dictum id elementum eget</a>
+			</nav>
+			
+			<nav class="ls ls-sec ls-ico">
+				<a href="#" class="li divider">Anchors list with Icons and multi line</a>
+				<a href="#" class="li">
+					<span class="ln">a lacinia</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">sit amet vehicula</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+			</nav>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<ul class="ls ls-ter">
+				<li class="divider">Normal</li>
+				<li>Lorem ipsum dolor</li>
+				<li>consectetur adipiscing elit</li>
+				<li>Vestibulum iaculis felis sed lectus dapibus</li>
+			</ul>
+			
+			<ul class="ls ls-ter ls-ico">	
+				<li class="divider">Left Icon</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">a lacinia</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">nibh molestie</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-ter ls-ico">	
+				<li class="divider">Right Icon</li>
+				<li>
+					<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">sit amet vehicula</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+				<li>
+					<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<ul class="ls ls-ter ls-ico">	
+				<li class="divider">Multi Lined</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+				</li>
+				<li>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+					</span>
+				</li>
+				<li>
+					<span class="ln">
+						<span class="ln">Ut ultricies orci nec nunc aliquet</span>
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">Nullam congue blandit massa sit amet tincidunt</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</li>
+			</ul>
+			
+			<nav class="ls ls-ter">
+				<a href="#" class="li divider">Anchors list</a>
+				<a href="#" class="li">a lacinia</a>
+				<a href="#" class="li">sit amet vehicula</a>
+				<a href="#" class="li">Praesent felis ligula, dictum id elementum eget</a>
+			</nav>
+			
+			<nav class="ls ls-ter ls-ico">
+				<a href="#" class="li divider">Anchors list with Icons and multi line</a>
+				<a href="#" class="li">
+					<span class="ln">a lacinia</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">sit amet vehicula</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+				</a>
+				<a href="#" class="li">
+					<span class="ln">
+						<span class="ln">Praesent felis ligula, dictum id elementum eget</span>
+						<span class="ln">sit amet vehicula</span>
+						<span class="ln">a lacinia</span>
+					</span>
+					<span class="ico">
+						<img src="arrow.jpg"/>
+					</span>
+				</a>
+			</nav>
+		</div>
+		
+		<br />
+		<br />
+		<br />
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-pri">Yeah</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-sec">Yeah</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-ter">Yeah</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-pri btn-ico">
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-sec btn-ico">
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-ter btn-ico">
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-pri">
+				Yeah Yeah
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-sec">
+				Yeah Yeah
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-ter">
+				Yeah Yeah
+				<img src="arrow.jpg"/>
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-pri">
+				<img src="arrow.jpg"/>
+				Yeah Yeah
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-sec">
+				<img src="arrow.jpg"/>
+				Yeah Yeah
+			</a>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<a href="#" class="btn btn-ter">
+				<img src="arrow.jpg"/>
+				Yeah Yeah
+			</a>
+		</div>
+		
+		<br />
+		<br />
+		<br />
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-pri">
+				<label> Input
+					<input></input>
+				</label>
+				
+				<label> Textarea
+					<textarea></textarea>
+				</label>
+				
+				<label> Select
+					<select>
+						<option>Lorem ipsum dolor
+						<option>consectetur adipiscing elit
+						<option>Vestibulum iaculis felis sed lectus dapibus
+						<option>a lacinia
+						<option>nibh molestie
+					</select>
+				</label>
+				
+				<label class="btn btn-pri"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-sec"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-ter"> Checkbox
+					<input type="checkbox" />
+				</label>
+			</form>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-sec">
+				<label> Input
+					<input></input>
+				</label>
+				
+				<label> Textarea
+					<textarea></textarea>
+				</label>
+				
+				<label> Select
+					<select>
+						<option>A
+						<option>B
+						<option>C
+						<option>D
+						<option>E
+					</select>
+				</label>
+				
+				<label class="btn btn-pri"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-sec"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-ter"> Checkbox
+					<input type="checkbox" />
+				</label>
+			</form>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-ter">
+				<label> Input
+					<input></input>
+				</label>
+				
+				<label> Textarea
+					<textarea></textarea>
+				</label>
+				
+				<label> Select
+					<select>
+						<option>A
+						<option>B
+						<option>C
+						<option>D
+						<option>E
+					</select>
+				</label>
+				
+				<label class="btn btn-pri"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-sec"> Checkbox
+					<input type="checkbox" />
+				</label>
+				
+				<label class="btn btn-ter"> Checkbox
+					<input type="checkbox" />
+				</label>
+			</form>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-pri">
+				<label class="ln"> 
+					<span>Input</span>
+					<input></input>
+				</label>
+				
+				<label class="ln"> 
+					<span>Textarea</span>
+					<textarea></textarea>
+				</label>
+				
+				<label class="ln"> 
+					<span>Select</span>
+					<select>
+						<option>Lorem ipsum dolor
+						<option>consectetur adipiscing elit
+						<option>Vestibulum iaculis felis sed lectus dapibus
+						<option>a lacinia
+						<option>nibh molestie
+					</select>
+				</label>
+			</form>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-sec">
+				<label class="ln"> 
+					<span>Input</span>
+					<input></input>
+				</label>
+				
+				<label class="ln"> 
+					<span>Textarea</span>
+					<textarea></textarea>
+				</label>
+				
+				<label class="ln"> 
+					<span>Select</span>
+					<select>
+						<option>Lorem ipsum dolor
+						<option>consectetur adipiscing elit
+						<option>Vestibulum iaculis felis sed lectus dapibus
+						<option>a lacinia
+						<option>nibh molestie
+					</select>
+				</label>
+			</form>
+		</div>
+		
+		<div style="width: 31%; display: inline-block;">
+			<form class="fr fr-ter">
+				<label class="ln"> 
+					<span>Input</span>
+					<input></input>
+				</label>
+				
+				<label class="ln"> 
+					<span>Textarea</span>
+					<textarea></textarea>
+				</label>
+				
+				<label class="ln"> 
+					<span>Select</span>
+					<select>
+						<option>Lorem ipsum dolor
+						<option>consectetur adipiscing elit
+						<option>Vestibulum iaculis felis sed lectus dapibus
+						<option>a lacinia
+						<option>nibh molestie
+					</select>
+				</label>
+			</form>
+		</div>
+	</body>
+</html>

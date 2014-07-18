@@ -1,0 +1,412 @@
+﻿/**
+ *	Componentes CSS
+ *	
+ * Arquivo que contém todos estilos de componentes da apliação. 
+ *
+ * A estrura segue três níveis. Primário, secundário e terciário.
+ *
+ * Atualmente estão aqui contemplados:
+ * - Listas (.ls .ls-pri/sec/ter)
+ *   - Itens da lista (.li)
+ * - Botões (.btn .btn-pri/sec/ter)
+ * - Formulários (.fr .fr-pri/sec/ter)
+ *	 - Labels (.lb)
+ *   - Inputs (.in)
+ *   - Textarea (.ta)
+ *   - Select (.sl)
+ *   - Checkbox
+ *
+ * É extremamente recomendada a leitura dos blocos especificos de cada 
+ * componente para entender melhor seu funcionamento.
+ */
+ 
+ 
+ 
+/**
+ *	Estilos padrões para listas
+ *	
+ * Estilos:
+ * .ls				- Indica que o componente será estilizado pelo tema
+ * .ls-pri/sec/ter	- Indica qual estilo deve ser atribuido a lista
+ * .ls-ico			- Indicar que a lista receberá um icone nos seus itens
+ * .li				- Simula um item de lista quando este não é um <li>
+ * :hover, :active	- Ocorre sombreamento interno do item da lista
+ * .ativo			- Mudança da cor de fundo, para indicar o item da lista que está ativo
+ * .divisor			- Indica um divisor de lista
+ * .ln				- Usada para adicionar mais de uma linha no item de lista.
+ * .ico				- Usada para indicar que o elemento terá um icone dentro
+ *
+ *
+ * Observações:
+ *	-Lista com Icones: Deve-se adicionar um container para o icone e outro para o conteudo,
+ *	referenciados como icone (.ico) e linha (.ln), respectivamente. Exemplo:
+ *	<li>
+ *		<span class="ico">
+ *			<img src="x.png"/>
+ *		</span>
+ *		<span class="ln">
+ *			xxx
+ *		</span>
+ *	</li>
+ *
+ *
+ *	-Lista com icone e multiplas linhas: Para gerar uma lista com icone e mais de uma linha, 
+ *	deve-se gerar a quatidade de linhas desejadas dentro de apenas uma linha, que estará 
+ *	no mesmo nível no icone. Exemplo:
+ *	<li>
+ *		<span class="ico">
+ *			<img src="x.png"/>
+ *		</span>
+ *		<span class="ln">
+ *			<span class="ln">
+ *				xxx
+ *			</span>
+ *			<span class="ln">
+ *				xxx
+ *			</span>
+ *		</span>
+ *	</li>
+ */
+.ls {
+	list-style-type: none;
+	margin: .5em;
+	padding: 0;
+}
+.ls li,
+.ls .li {
+	display: list-item;
+	overflow: hidden;
+	padding: 1em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ls a.li {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+/* Linha e Icone */
+.ls .li .ln,
+.ls li .ln {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	text-overflow: ellipsis;
+}
+.ls-ico li > .ico,
+.ls-ico .li > .ico,
+.ls-ico li > .ln,
+.ls-ico .li > .ln {
+	display: inline-block;
+	vertical-align: middle;
+}
+.ls-ico li > .ln,
+.ls-ico .li > .ln {
+	width: 85%;
+}
+.ls-ico li > .ico,
+.ls-ico .li > .ico {
+	width: 10%;
+}
+
+
+/* Lista PRI */
+.ls-pri {
+	background-color: #f0f0f0;
+	color: #000;
+}
+.ls-pri li:hover:not(.divisor),
+.ls-pri li:active:not(.divisor),
+.ls-pri .li:hover:not(.divisor),
+.ls-pri .li:active:not(.divisor) {
+	background-color: #E8E8E8;
+	box-shadow: 0px 0px 10px #c6c6c6 inset;
+}
+.ls-pri li.ativo,
+.ls-pri .li.ativo {
+	background-color: #d5e4f0;
+}
+.ls-pri li.divisor,
+.ls-pri .li.divisor {
+	background-color: #4d7494;
+	color: #fff;
+}
+
+
+/* Lista SEC */
+.ls-sec {
+	background-color: #e0e0de;
+	color: #4d7494;
+}
+.ls-sec li,
+.ls-sec .li {
+	border-bottom: 1px solid #fff;
+}
+.ls-sec li:hover:not(.divisor),
+.ls-sec li:active:not(.divisor),
+.ls-sec .li:hover:not(.divisor),
+.ls-sec .li:active:not(.divisor) {
+	background-color: #d3d3d3;
+	box-shadow: 0px 0px 10px #888 inset;
+}
+.ls-sec li.ativo,
+.ls-sec .li.ativo {
+	background-color: #C9C9C9;
+}
+.ls-sec li.divisor,
+.ls-sec .li.divisor {
+	background-color: #4d7494;
+	color: #fff;
+}
+
+
+/* Lista TER */
+.ls-ter {
+	background-color: #4d7494;
+	color: #fff;
+}
+.ls-ter li:hover:not(.divisor),
+.ls-ter li:active:not(.divisor),
+.ls-ter .li:hover:not(.divisor),
+.ls-ter .li:active:not(.divisor) {
+	background-color: #6596BF;
+	box-shadow: 0px 0px 10px #666 inset;
+}
+.ls-ter li.ativo,
+.ls-ter .li.ativo {
+	background-color: #70a6d3;
+}
+.ls-ter li.divisor,
+.ls-ter .li.divisor {
+	background-color: #f0f0f0;
+	color: #000;
+}
+
+
+
+/**
+ *	Estilos padrões para botões
+ *	
+ * Estilos:
+ * .btn				- Indica que o componente será estilizado pelo tema
+ * .btn-pri/sec/ter - Indica qual estilo deve ser atribuído ao botão 
+ * .btn-ico			- Indica que o botão não possui texto, apenas imagem
+ * :hover, :active	- Ocorre sombreamento interno do botão
+ * .ativo			- Mudança da cor de fundo, para indicar o botão está ativo
+ * .img				- Simula um elemento imagem se este não for um <img>
+ *
+ * Observações:
+ *	-Esse estilo também deve ser usado para labels de checkboxes.
+ */
+.btn {
+	border: none;
+	display: inline-block;
+	margin: .5em;
+	overflow: hidden;
+	padding: 1em;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+a.btn {
+	text-decoration: none;
+}
+.btn img,
+.btn .img {
+	vertical-align: middle;
+	margin: 0 .2em;
+}
+
+.btn-ico {
+	padding: .5em;
+}
+.btn-ico img,
+.btn .img {
+	margin: 0;
+}
+
+
+/* Botão PRI */
+.btn-pri {
+	background-color: #f0f0f0;
+	border: 1px solid #cee2ed;
+	color: #4d7494;
+}
+.btn-pri:hover, 
+.btn-pri:active {
+	background-color: #e8e8e8;
+	box-shadow: 0px 0px 10px #c6c6c6 inset;
+}
+.btn-pri.ativo  {
+	background-color: #d5e4f0;
+}
+
+
+/* Botão SEC */
+.btn-sec {
+	background-color: #e0e0de;
+	color: #4d7494;
+}
+.btn-sec:hover, 
+.btn-sec:active{
+	background-color: #d3d3d3;
+	box-shadow: 0px 0px 10px #888 inset;
+}
+.btn-sec.ativo {
+	background-color: #C9C9C9;
+}
+
+
+/* Botão TER */
+.btn-ter {
+	background-color: #4d7494;
+	box-shadow: 0 0 1px 1px #888888;
+	color: #fff;
+}
+.btn-ter:hover, 
+.btn-ter:active {
+	background-color: #6596BF;
+	box-shadow: 0px 0px 10px #666 inset;
+}
+.btn-ter.ativo {
+	background-color: #70a6d3;
+}
+
+
+
+/**
+ *	Estilos padrões para formulários
+ *	
+ * Estilos:
+ * .fr				- Indica que o componente será estilizado pelo tema
+ * .fr-pri/sec/ter	- Indica qual estilo deve ser atribuído ao formulário 
+ * .lb				- Simula um label quando este não é um <label>
+ * .ln				- Indica que o texto e o campo devem estar na mesma linha
+ * .in				- Simula um input quando este não é um <input>
+ * .sl				- Simula um select quando este não é um <select>
+ * .sp				- Simula um span quando este não é um <span>
+ * .ta				- Simula uma textarea quando esta não é uma <textarea>
+ *
+ * Observações:
+ *	-Para estilizar checkboxes utilize os estilos de botões nos labels. Ex:
+ * 	<label class=".btn .btn-pri">
+ *		<input type="checkbox" />
+ *	</label>
+ *
+ *
+ *	-Para deixar o texto e o campo na mesma linha basta colocar a classe de linha (.ln)
+ *	para o label e colocar o texto, dentro do label, num <span> (.sp):
+ * 	<label class="ln">
+ *		<span>Input</span>
+ *		<input/>
+ *	</label>
+ *
+ *
+ *	-Diferente dos outros estilos, que só serão aplicados a elementos dentro de um
+ *	formulário, quando um input tiver o tipo "search" (type=search), ele receberá estilo.
+ */
+.fr {
+	margin: .5em;
+	padding: 1em;
+}
+
+.fr-pri {
+	background-color: #f0f0f0;
+	color: #7F7F7F;
+	box-shadow: 0 0 10px #d0d0d0;
+}
+
+.fr-sec {
+	background-color: #e0e0de;
+	color: #4d7494;
+}
+
+.fr-ter {
+	background-color: #4d7494;
+	color: #fff;
+}
+
+.fr label,
+.fr .lb {
+	display: block;
+	margin: .5em 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.fr input:not([type="checkbox"]),
+.fr .in,
+.fr select,
+.fr .sl,
+.fr textarea,
+.fr .ta,
+input[type=search],
+.in[type=search] {
+	background: #f9f9f9;
+	border: 1px solid #aaa;
+	border-radius: 0;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, .3) inset;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: #7F7F7F;
+	display: block;
+	padding: .5em;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.fr .ln {
+	display: block;
+}
+
+.fr .ln > span,
+.fr .ln > .sp {
+	display: inline-block;
+	margin: 0 .5em;
+	overflow: hidden;
+	text-align: right;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 25%;
+}
+.fr .ln > input:not([type="checkbox"]),
+.fr .ln > .in,
+.fr .ln > select,
+.fr .ln > .sl,
+.fr .ln > textarea,
+.fr .ln > .ta,
+.ln > input[type=search],
+.ln > .in[type=search] {
+	display: inline-block;
+	width: 65%;
+}
+
+/* Campos de pesquisa */
+input[type=search] ,
+.in[type=search] {
+	background-image: url(#{resource['imagens/icones/lupa.png']});
+	background-position: .75em;
+	background-repeat: no-repeat;
+	padding-left: 2em;
+}
+
+/* Checkboxes que ocupam a linha inteira */
+.fr .btn span,
+.fr .btn .sp,
+.fr .btn input[type=checkbox],
+.fr .btn .in[type=checkbox] {
+	display: inline-block;
+}
+.fr .btn .sp,
+.fr .btn span {
+	width: 85%;
+}
+.fr .btn .in[type=checkbox],
+.fr .btn input[type=checkbox] {
+	width: 10%;
+}
